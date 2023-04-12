@@ -1,0 +1,29 @@
+/*! 
+ * Roots v 2.0.0
+ * Follow me @adanarchila at Codecanyon.net
+ * URL: http://codecanyon.net/item/roots-phonegapcordova-multipurpose-hybrid-app/9525999
+ * Don't forget to rate Roots if you like it! :)
+ */
+
+This module will need these plugins:
+////////////////////////////////////
+
+
+com.google.cordova.admob
+https://github.com/floatinghotpot/cordova-admob-pro
+
+
+For PhoneGap Build you can use:
+///////////////////////////////
+
+
+<gap:plugin name="com.google.cordova.admob" source="plugins.cordova.io" />
+
+
+Access Origin
+/////////////
+
+In case your adds are not showing try to enable the access tag to all the domains.
+
+<access origin="*" />
+

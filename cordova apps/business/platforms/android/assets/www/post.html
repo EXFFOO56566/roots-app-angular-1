@@ -1,0 +1,23 @@
+<ons-page ng-controller="postController">
+  <ons-toolbar>
+    <div class="left">
+      <ons-back-button>Back</ons-back-button>
+    </div>
+    <div class="center">{{ item.title | limitTo: 12 }}...</div>
+  </ons-toolbar>
+
+  <div class="app-page">
+    <div class="app-hero app-hero-image">
+      <h2>{{ item.title | limitTo: 15 }}...</h2>
+      <div class="app-hero-overlay"></div>
+      <img ng-src="{{ item.thumbnail_images.full.url }}" class="app-hero-bg">
+    </div>
+
+    <div class="app-page-content">
+      <h4>{{ item.title }}</h4>
+      <div ng-bind-html="renderHtml(item.content)"></div>
+    </div>
+
+  </div>
+
+</ons-page>

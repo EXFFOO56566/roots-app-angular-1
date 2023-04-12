@@ -1,0 +1,53 @@
+<ons-navigator animation="slide" var="video"> 
+  <ons-page ng-controller="latestVideosController" data-ng-init="getAllRecords()">
+    <ons-toolbar>    
+      <div class="left">      
+      </div>
+      <div class="center">      
+        My Church
+      </div>
+      <div class="right">
+      </div>
+    </ons-toolbar>
+
+
+    <div class="app-page">
+      <div class="app-hero">
+        <ul rn-carousel class="image">
+          <li><div ng-style="{'background-image': 'url(images/church/01.jpg)'}"  class="bgimage"></div></li>
+          <li><div ng-style="{'background-image': 'url(images/church/02.jpg)'}"  class="bgimage"></div></li>
+          <li><div ng-style="{'background-image': 'url(images/church/03.jpg)'}"  class="bgimage"></div></li>
+        </ul>      
+      </div>
+    </div>
+
+    <ons-list modifier="nopadding">
+      <ons-list-header>Video Stream</ons-list-header>
+      <ons-list-item class="list-item-container" ng-repeat="item in items track by $index" ng-click="showPost($index)">
+        <ons-row>
+          <ons-col width="100%">
+            <div class="thumbnail-box is-loading" images-loaded="imgLoadedEvents">
+              <img ng-show="{{ item.thumbnail_images }}" ng-src="{{ item.thumbnail_images['featured-video']['url'] }}" class="img-responsive" img-cache>
+            </div>
+          </ons-col>
+        </ons-row>
+        <ons-row>
+          <ons-col width="20px"></ons-col>
+          <ons-col>
+            <div class="name">
+              {{ item.title }}
+            </div>
+            <div class="desc">
+              {{ item.excerpt | htmlToPlaintext | limitTo: 60 }}...                
+            </div>
+          </ons-col>
+          <ons-col width="20px"></ons-col>
+        </ons-row>
+      </ons-list-item>
+
+    </ons-list>
+
+    <ons-button id="moreButton" modifier="large" should-spin="{{isFetching}}" ng-click="nextPage()">MORE VIDEOS</ons-button>
+
+  </ons-page>
+</ons-navigator>

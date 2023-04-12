@@ -1,0 +1,32 @@
+<ons-page>
+
+  <ons-toolbar>
+    <div class="left">
+      <ons-toolbar-button ng-click="menu.toggle()"><ons-icon icon="ion-navicon-round" fixed-width="false"></ons-icon></ons-toolbar-button>
+    </div>
+    <div class="center">Notifications</div>
+  </ons-toolbar>
+
+  <div class="app-page">
+    <ons-list class="notifications">
+      <ons-list-item class="notify-li" modifier="tappable" ng-repeat="i in [1,2,3,4,5,6,7,8,9]">
+        <ons-row>
+          <ons-col width="50px">
+            <div class="notify-avatar">
+              <img ng-src="images/profiles/profile-image-0{{i}}.png">
+            </div>
+          </ons-col>
+          <ons-col>
+            <div class="notify-message">
+              <strong>@hansolo</strong> liked your photo.
+            </div>
+          </ons-col>
+          <ons-col width="50px">
+            <img ng-src="images/gallery/0{{i}}.png" class="notify-image">
+          </ons-col>
+        </ons-row>
+      </ons-list-item>
+    </ons-list>
+  </div>
+
+</ons-page>

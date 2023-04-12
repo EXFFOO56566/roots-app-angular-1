@@ -1,0 +1,24 @@
+/*! 
+ * Roots v 2.0.0
+ * Follow me @adanarchila at Codecanyon.net
+ * URL: http://codecanyon.net/item/roots-phonegapcordova-multipurpose-hybrid-app/9525999
+ * Don't forget to rate Roots if you like it! :)
+ */
+
+Instructions
+////////////
+
+In the WordPress Plugins directory there are 2 plugins for the JSON API, if you want to protect your content and only show it to registered users you must use the json-api-auth.zip and also the json-api-user.zip you will find more information in how to set up these plugins. 
+
+
+
+
+Access Origin
+/////////////
+
+In order to cache remote images via http it is important to allow access to those domains. This can be setup via a whitelisting <access> element in your config.xml file.
+
+If you only want to do tests you can allow access to all domains to avoid this kind of issues:
+
+<access origin="*" />
+In order to avoid possible security issues, always limit the allowed domains list whenever possible.

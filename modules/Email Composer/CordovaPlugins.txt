@@ -1,0 +1,21 @@
+/*! 
+ * Roots v 2.0.0
+ * Follow me @adanarchila at Codecanyon.net
+ * URL: http://codecanyon.net/item/roots-phonegapcordova-multipurpose-hybrid-app/9525999
+ * Don't forget to rate Roots if you like it! :)
+ */
+
+This module will need these plugins:
+////////////////////////////////////
+
+
+de.appplant.cordova.plugin.email-composer
+cordova plugin add https://github.com/katzer/cordova-plugin-email-composer.git
+
+
+For PhoneGap Build you can use:
+///////////////////////////////
+
+
+<gap:plugin name="de.appplant.cordova.plugin.email-composer" version="0.8.2" />
+

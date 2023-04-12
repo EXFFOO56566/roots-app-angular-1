@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="utf-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <title>Radio with Album Art</title>  
+
+  <!-- All our CSS -->
+  <!-- onsen-css-components.css is the skin of your app, you can generate one custom skin with this generator: http://components.onsen.io/ -->
+  <link rel="stylesheet" href="lib/onsen/css/onsenui.css">    
+  <link rel="stylesheet" href="css/onsen-css-components.css"> 
+  <link rel="stylesheet" href="css/plugins.css"/>
+  <link rel="stylesheet" href="css/roots.css"/>
+  <link rel="stylesheet" href="css/app.css"/>
+  
+  <!-- These are our JS libraries that make all the magic in our App -->
+  <script src="lib/onsen/js/angular/angular.js"></script>    
+  <script src="lib/onsen/js/onsenui.js"></script>    
+  <script src="js/plugins.js"></script>  
+  <script src="cordova.js"></script>
+  <script src="js/app.js"></script>  
+      
+</head>
+
+<body>    
+
+  <ons-navigator animation="slide" var="radioPage">  
+      
+    <ons-page ng-controller="radioController">
+      <ons-toolbar modifier="transparent">
+        <div class="left">
+        </div>
+        <div class="center">
+          Radio with Album Art
+        </div>
+        <div class="right" ng-show="isFetching">
+        </div>
+      </ons-toolbar>
+
+      <div class="details-content glass no-scroll">
+        <div class="radiobox">
+          <ons-row align="center">
+            <ons-col width="10%"></ons-col>
+            <ons-col width="80%" align="center">
+              <img ng-src="{{ radioOptions.albumArt }}">
+              <p id="stream-time">{{ radio.currentTime | SecondsToTimeString }}</p>
+              <p class="song-title">{{ radioOptions.songName }}</p>
+            </ons-col>
+            <ons-col width="10%"></ons-col>
+          </ons-row>        
+          <ons-row align="center">
+            <ons-col width="32%"></ons-col>
+            <ons-col width="36%" align="center">
+              <a href="#" id="btn-play" ng-click="startRadio()" ng-bind-html="renderHtml(buttonIcon)"><span class="ion-ios-play"></span></a>
+            </ons-col>
+            <ons-col width="32%"></ons-col>
+          </ons-row>
+        </div>
+        <div class="blur">
+          <img src="images/bg.png" class="bg">
+        </div>
+      </div>
+
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+       <filter id="blur">
+         <feGaussianBlur stdDeviation="15" />
+         </filter>
+      </svg> 
+
+
+    </ons-page>
+
+    <ons-modal var="modal">
+      Streaming failed.<br> Possibly due to a network error.<br>
+      Press the Play button again to retry.
+    </ons-modal>
+
+  </ons-navigator>   
+
+</body>
+
+</html>    

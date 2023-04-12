@@ -1,0 +1,32 @@
+/*! 
+ * Roots v 2.0.0
+ * Follow me @adanarchila at Codecanyon.net
+ * URL: http://codecanyon.net/item/roots-phonegapcordova-multipurpose-hybrid-app/9525999
+ * Don't forget to rate Roots if you like it! :)
+ */
+
+This module will need these plugins:
+////////////////////////////////////
+
+
+com.hutchind.cordova.plugins.streamingmedia
+https://github.com/nchutchind/Streaming-Media-Cordova-Plugin
+
+
+For PhoneGap Build you can use:
+///////////////////////////////
+
+
+<gap:plugin name="com.hutchind.cordova.plugins.streamingmedia" version="0.1.2" />
+
+
+Access Origin
+/////////////
+
+In order to stream the video it is important to allow access to that domain. This can be setup via a whitelisting <access> element in your config.xml file.
+
+If you only want to do tests you can allow access to all domains to avoid this kind of issues:
+
+<access origin="*" />
+In order to avoid possible security issues, always limit the allowed domains list whenever possible.
+

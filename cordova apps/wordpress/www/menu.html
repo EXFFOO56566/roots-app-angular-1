@@ -1,0 +1,14 @@
+<ons-list class="menu-list" ng-controller="menuController">
+  <ons-list-item class="menu-item" ng-click="menu.setMainPage('latest.html', {closeMenu: true});">
+    <ons-icon icon="ion-home" fixed-width="true"></ons-icon>
+    Latest News
+  </ons-list-item>
+  <ons-list-item ng-show="isFetchingMenu">
+    <ons-icon icon="ion-loading-c" fixed-width="false" ></ons-icon>
+  </ons-list-item>
+  <!-- this is a loop to print all the categories -->
+  <ons-list-item ng-repeat="item in menuItems track by $index" class="menu-item" ng-click="showCategory($index)">
+    <ons-icon icon="{{ item.description }}" fixed-width="true"></ons-icon>
+    {{ item.title }}
+  </ons-list-item>
+</ons-list>

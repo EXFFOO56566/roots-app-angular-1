@@ -1,0 +1,60 @@
+<ons-page  ng-controller="signupController">
+  <ons-toolbar modifier="transparent">    
+    <div class="left">
+      
+    </div>
+    <div class="right">
+      <ons-toolbar-button class="white" ng-click="menu.setMainPage('login.html', {closeMenu: true})" >Log In</ons-toolbar-button>
+    </div>
+  </ons-toolbar>
+
+  <div class="signup-page">
+    <div class="signup-logo">
+      <h2>WordPress Auth</h2>
+    </div>
+
+    <div class="signup-form">
+      <div class="signup-wrapper">
+
+        <ons-row>
+          <ons-col>
+            <input type="email" class="text-input--underbar width-full" ng-model="email" placeholder="Email" value="" >
+          </ons-col>
+        </ons-row>
+
+        <ons-row>
+          <ons-col>
+            <input type="text" class="text-input--underbar width-full" ng-model="username" placeholder="Username" value="" >
+          </ons-col>
+        </ons-row>
+
+        <ons-row>
+          <ons-col>
+            <input type="password" class="text-input--underbar width-full" ng-model="password" placeholder="Password" value="" >
+          </ons-col>
+        </ons-row>
+
+        <div class="lucent">
+          <p class="note">Password - 6 characters or more</p>
+        </div>
+
+        <ons-row>
+          <ons-col>
+            <ons-button modifier="large" ng-click="register()">Sign up</ons-button>
+          </ons-col>
+        </ons-row>
+      </div>
+    </div>
+
+    <div class="blur">
+      <img src="images/bg.png" class="bg">
+    </div>
+  </div>
+
+  <ons-modal var="modal">
+    <ons-icon icon="ion-loading-c" spin="true"></ons-icon>
+    <br><br>
+    Please wait.<br>Connecting...
+  </ons-modal>  
+
+</ons-page>

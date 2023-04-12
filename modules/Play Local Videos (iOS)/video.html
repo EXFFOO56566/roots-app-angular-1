@@ -1,0 +1,25 @@
+<ons-page ng-controller="videoController">
+  <ons-toolbar>
+    <div class="left">
+      <ons-back-button>Back</ons-back-button>
+    </div>
+    <div class="center">
+      {{ video.title }}
+    </div>
+    <div class="right">
+    </div>
+  </ons-toolbar>
+  <div class="app-page">
+    <div class="video-stream">
+      <img ng-src="{{ video.poster }}" alt="video">
+      <a href="#" id="btn-play" ng-click="playVideo()"><span class="ion-ios-play"></span></a>
+    </div>
+    <video id="video" src="{{ video.file }}" type="video/mp4" style="display:none"></video>
+    <div class="video-stream-desc">
+      <h2>{{ video.title }}</h2>
+      <p>{{ video.desc }}</p>
+    </div>
+
+  </div>
+
+</ons-page>

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="utf-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <title>QR Scanner</title>  
+
+  <!-- All our CSS -->
+  <!-- onsen-css-components.css is the skin of your app, you can generate one custom skin with this generator: http://components.onsen.io/ -->
+  <link rel="stylesheet" href="lib/onsen/css/onsenui.css">    
+  <link rel="stylesheet" href="css/onsen-css-components.css"> 
+  <link rel="stylesheet" href="css/plugins.css"/>
+  <link rel="stylesheet" href="css/roots.css"/>
+  <link rel="stylesheet" href="css/app.css"/>
+  
+  <!-- These are our JS libraries that make all the magic in our App -->
+  <script src="lib/onsen/js/angular/angular.js"></script>    
+  <script src="lib/onsen/js/onsenui.js"></script>    
+  <script src="js/plugins.js"></script>  
+  <script src="cordova.js"></script>
+  <script src="js/app.js"></script>  
+  <style type="text/css">
+    .pull-right{
+      opacity:0.7;
+    }
+  </style>
+</head>
+
+<body>    
+
+  <ons-navigator animation="slide" var="barcodepage">  
+    <ons-page >
+      <ons-toolbar>
+        <div class="left">
+        </div>
+        <div class="center">Barcode Scanner</div>
+        <div class="right">
+        </div>
+      </ons-toolbar>
+
+      <div class="app-page">
+        <div class="app-page-content" ng-controller="barcodeController">
+          <br><br>
+          <ons-button modifier="large" ng-click="startScanner()">Start Scanner</ons-button>
+
+          <h2>Scanner Results</h2>
+          <ons-list>
+            <ons-list-item><span class="pull-left">Result</span><span class="pull-right">{{ barcode.result }}</span></ons-list-item>
+            <ons-list-item><span class="pull-left">Format</span><span class="pull-right">{{ barcode.format }}</span></ons-list-item>
+            <ons-list-item><span class="pull-left">Cancelled</span><span class="pull-right">{{ barcode.cancelled }}</span></ons-list-item>
+          </ons-list>
+
+        </div>
+      </div>
+    </ons-page>
+  </ons-navigator>   
+
+</body>
+
+</html>

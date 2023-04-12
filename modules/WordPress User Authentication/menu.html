@@ -1,0 +1,14 @@
+<ons-page modifier="menu-page" ng-controller="menuController">
+
+  <ons-list class="menu-list">
+    <ons-list-item class="menu-item" ng-click="menu.setMainPage('latest.html', {closeMenu: true});">
+      <ons-icon icon="ion-home" fixed-width="true"></ons-icon>
+      Latest News
+    </ons-list-item>
+    <ons-list-item class="menu-item" ng-click="logOut()">
+      <ons-icon icon="ion-power" fixed-width="true"></ons-icon>
+      Logout
+    </ons-list-item>
+  </ons-list>
+
+</ons-page>

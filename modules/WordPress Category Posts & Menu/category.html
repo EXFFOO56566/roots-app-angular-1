@@ -1,0 +1,46 @@
+<ons-navigator animation="slide" var="category">  
+  <ons-page ng-controller="categoryController" data-ng-init="getAllRecords()">
+    <ons-toolbar modifier="opacity">
+      <div class="left">
+        <ons-toolbar-button ng-click="menu.toggle()"><ons-icon icon="ion-navicon-round" fixed-width="false"></ons-icon></ons-toolbar-button>
+      </div>
+      <div class="center">{{ category.title }}</div>
+    </ons-toolbar>
+
+    <div class="app-page news-page" >
+
+      <ons-list modifier="news">
+
+        <ons-list-item modifier="chevron" class="list-item-container" ng-repeat="item in catItems track by $index" ng-click="showPost($index)">
+          <ons-row>
+            <ons-col width="95px">
+              <div class="thumbnail-box is-loading" images-loaded="imgLoadedEvents">
+                <img ng-show="{{ item.thumbnail_images }}" ng-src="{{ item.thumbnail_images.thumbnail.url }}" class="thumbnail" img-cache>
+              </div>
+            </ons-col>
+            <ons-col>
+              <div class="name">
+                <!-- If you want to show the whole title and do not limit it by 22 chars, use this: -->
+                <!-- {{ item.title }} -->
+                {{ item.title | limitTo: 22 }}...
+              </div>
+              <div class="location" ng-show="{{ item.categories }}">
+                <i class="ion-pricetags"></i> <span ng-repeat="cat in item.categories">{{cat.title}} </span>
+              </div>
+              <div class="desc">
+                {{ item.excerpt | htmlToPlaintext | limitTo: 60 }}...                
+              </div>
+            </ons-col>
+            <ons-col width="40px"></ons-col>
+          </ons-row>
+        </ons-list-item>
+
+      </ons-list>
+      <!-- ng-hide=" currentPage == totalPages " -->
+      <ons-button id="moreButton" rel="{{ catPrefix }}" modifier="large" should-spin="{{isFetching}}" ng-click="nextPage()">MORE NEWS</ons-button>
+
+    </div>
+
+  </ons-page>
+</ons-navigator>   
+

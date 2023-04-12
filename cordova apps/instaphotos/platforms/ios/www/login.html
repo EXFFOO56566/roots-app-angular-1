@@ -1,0 +1,30 @@
+<ons-page class="transparent">
+  <ons-toolbar modifier="transparent">    
+    <div class="left">
+      <ons-toolbar-button ng-click="menu.toggle()"><ons-icon icon="ion-navicon-round" style="color: white; font-size: 28px;" fixed-width="false"></ons-icon></ons-toolbar-button>
+    </div>
+    <div class="right">
+      <ons-toolbar-button class="white" ng-click="menu.setMainPage('signup.html', {closeMenu: true})" >Sign Up</ons-toolbar-button>
+    </div>
+  </ons-toolbar>
+
+  <div class="details-content login-page">
+    <div class="welcome">
+      <div class="login-logo">
+        <h2 class="home-title">InstaPhotos</h2>
+        <p class="subtitle">Sign up to see photos from your friends.</p>
+      </div>
+      <div class="login-form">
+        <div class="form-wrapper">
+          <input type="email" class="text-input--underbar" placeholder="Email" value="">
+          <input type="password" class="text-input--underbar" placeholder="Password" value="">
+          <br><br>
+          <ons-button modifier="large" class="login-button">Log In</ons-button>
+          <br><br>
+          <ons-button modifier="quiet" class="forgot-password">Forgot password?</ons-button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</ons-page>

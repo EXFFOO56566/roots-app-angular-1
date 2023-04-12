@@ -1,0 +1,20 @@
+/*! 
+ * Roots v 2.0.0
+ * Follow me @adanarchila at Codecanyon.net
+ * URL: http://codecanyon.net/item/roots-phonegapcordova-multipurpose-hybrid-app/9525999
+ * Don't forget to rate Roots if you like it! :)
+ */
+
+
+
+INSTRUCTIONS
+/////////////
+
+Make sure:
+
+- Your filenames doesn't contain spaces and special characters.
+
+- That all filenames are unique and doesn't contain period (.) delimiters. Android considers video.lowres.mp4 and video.highres.mp4 the same file.
+
+- Your videos have the mpeg4 codec.
+

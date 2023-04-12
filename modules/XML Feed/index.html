@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="utf-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <title>Latest News</title>  
+
+  <!-- All our CSS -->
+  <!-- onsen-css-components.css is the skin of your app, you can generate one custom skin with this generator: http://components.onsen.io/ -->
+  <link rel="stylesheet" href="lib/onsen/css/onsenui.css">    
+  <link rel="stylesheet" href="css/onsen-css-components.css"> 
+  <link rel="stylesheet" href="css/plugins.css"/>
+  <link rel="stylesheet" href="css/roots.css"/>
+  <link rel="stylesheet" href="css/app.css"/>
+  
+  <!-- These are our JS libraries that make all the magic in our App -->
+  <script src="lib/onsen/js/angular/angular.js"></script>    
+  <script src="lib/onsen/js/onsenui.js"></script>    
+  <script src="js/plugins.js"></script>  
+  <!--<script src="cordova.js"></script>-->
+  <script src="js/app.js"></script>  
+      
+</head>
+
+<body>    
+
+  <ons-navigator animation="slide" var="news">  
+    <ons-page>
+      <ons-toolbar modifier="opacity">
+        <div class="left">
+        </div>
+        <div class="center">Latest News</div>
+      </ons-toolbar>
+
+      <div class="app-page news-page" ng-controller="xmlFeedController" data-ng-init="getAllRecords()">
+
+        <ons-list modifier="news">
+
+          <ons-list-item modifier="chevron" class="list-item-container" ng-repeat="item in items track by $index" ng-click="openLink($index)">
+            <ons-row>
+              <ons-col>
+                <div class="name">
+                  {{ item.title }}
+                </div>
+                <div class="location" ng-show="{{ item.category }}">
+                  <i class="ion-pricetags"></i> <span ng-repeat="cat in item.category">{{cat.__cdata}} </span>
+                </div>
+                <div class="desc">
+                  {{ item.description.__cdata | limitTo: 100 }}...
+                </div>
+              </ons-col>
+              <ons-col width="40px"></ons-col>
+            </ons-row>
+          </ons-list-item>
+
+        </ons-list>
+
+        <ons-button id="moreButton" modifier="large" should-spin="{{isFetching}}" ng-click="nextPage()">MORE NEWS</ons-button>
+
+      </div>
+
+    </ons-page>
+  </ons-navigator>   
+
+</body>
+
+</html>

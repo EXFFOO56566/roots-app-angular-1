@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="utf-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <title>StatusBar</title>  
+
+  <!-- All our CSS -->
+  <!-- onsen-css-components.css is the skin of your app, you can generate one custom skin with this generator: http://components.onsen.io/ -->
+  <link rel="stylesheet" href="lib/onsen/css/onsenui.css">    
+  <link rel="stylesheet" href="css/onsen-css-components.css"> 
+  <link rel="stylesheet" href="css/plugins.css"/>
+  <link rel="stylesheet" href="css/roots.css"/>
+  <link rel="stylesheet" href="css/app.css"/>
+  
+  <!-- These are our JS libraries that make all the magic in our App -->
+  <script src="lib/onsen/js/angular/angular.js"></script>    
+  <script src="lib/onsen/js/onsenui.js"></script>    
+  <script src="js/plugins.js"></script>  
+  <script src="cordova.js"></script>
+  <script src="js/app.js"></script>  
+      
+</head>
+
+<body ng-controller="statusbarController">    
+
+  <ons-navigator animation="slide" var="adspage">  
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+        </div>
+        <div class="center">StatusBar</div>
+      </ons-toolbar>
+
+      <div class="app-page">
+        <div class="video-stream">
+          <img src="images/video.jpg" alt="video">
+        </div>
+
+        <div class="video-stream-desc">
+          <h2>I'm a title</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quis enim non arcu vehicula ultricies. Pellentesque habitant morbi tristique senectus et netus et malesuada fames.</p>
+
+          <ons-button modifier="large" ng-click="hideStatusBar()">Hide StatusBar</ons-button>
+          <br><br>
+          <ons-button modifier="large" ng-click="showStatusBar()">Show StatusBar</ons-button>
+        </div>
+
+      </div>
+
+    </ons-page>
+  </ons-navigator>   
+
+</body>
+
+</html>

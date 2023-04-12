@@ -1,0 +1,48 @@
+<ons-navigator animation="slide" var="radioPage">  
+    
+  <ons-page ng-controller="radioController">
+    <ons-toolbar >
+      <div class="left">
+      </div>
+      <div class="center">
+        Live Radio
+      </div>
+      <div class="right" ng-show="isFetching">
+      </div>
+    </ons-toolbar>
+
+    <div class="details-content glass no-scroll">
+      <div class="radiobox">
+        <ons-row align="center">
+          <ons-col width="17%"></ons-col>
+          <ons-col width="66%" align="center">
+            <img class="rounded" ng-src="{{ radioOptions.albumArt }}">
+            <p id="stream-time">{{ radio.currentTime | SecondsToTimeString }}</p>            
+          </ons-col>
+          <ons-col width="17%"></ons-col>
+        </ons-row>        
+        <ons-row>
+          <ons-col width="5%"></ons-col>
+          <ons-col width="90%" align="center">
+            <div style="height:27px;">
+              <p class="song-title">{{ radioOptions.songName | limitTo: 32 }}</p>
+            </div>
+          </ons-col>
+          <ons-col width="5%"></ons-col>
+        </ons-row>
+        <ons-row align="center">
+          <ons-col width="32%"></ons-col>
+          <ons-col width="36%" align="center">
+            <a href="#" id="btn-play" ng-click="startRadio()" ng-bind-html="renderHtml(buttonIcon)"><span class="ion-ios-play"></span></a>
+          </ons-col>
+          <ons-col width="32%"></ons-col>
+        </ons-row>
+      </div>
+      <div class="bgbox">
+        <img src="images/radio/bg.jpg" class="bg">
+      </div>
+    </div>
+
+  </ons-page>
+
+</ons-navigator>   

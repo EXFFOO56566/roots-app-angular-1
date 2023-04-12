@@ -1,0 +1,68 @@
+<ons-page>
+  <ons-toolbar>
+    <div class="left">
+      <ons-toolbar-button ng-click="menu.toggle()"><ons-icon icon="ion-navicon-round" fixed-width="false"></ons-icon></ons-toolbar-button>
+    </div>
+    <div class="center">Icons List</div>
+  </ons-toolbar>
+  <div class="app-page">
+
+    <!-- settings with icons -->
+    <ons-list modifier="list-icons">
+      <ons-list-item modifier="tappable">
+        <ons-icon icon="fa-comment" size="20px"></ons-icon>
+        Make a Call
+        <span class="list-item-action">
+          <ons-icon icon="fa-phone-square" size="22px"></ons-icon>
+        </span>
+      </ons-list-item>
+
+      <ons-list-item modifier="chevron">
+        <ons-icon icon="fa-credit-card" size="20px"></ons-icon>
+        Change Credit Card
+      </ons-list-item>
+
+      <ons-list-item modifier="chevron">
+        <ons-icon icon="fa-users" size="20px"></ons-icon>
+        See Friends
+        <span class="list-item-note">
+          <span class="notification">10</span>
+        </span>
+      </ons-list-item>
+
+      <ons-list-header>My Preferences</ons-list-header>
+
+      <ons-list-item modifier="chevron">
+        <ons-icon icon="fa-film" size="20px"></ons-icon>
+        My Movie
+        <span class="list-item-note lucent">Monaca Legend</span>
+      </ons-list-item>
+
+      <ons-list-item modifier="chevron">
+        <ons-icon icon="fa-music" size="20px"></ons-icon>
+        My Music
+        <span class="list-item-note lucent">Anatoo Samba</span>
+      </ons-list-item>
+
+      <ons-list-item modifier="chevron">
+        <ons-icon icon="fa-gamepad" size="20px"></ons-icon>
+        My Game
+        <span class="list-item-note lucent">Onsen UI Bros.</span>
+      </ons-list-item>
+
+      <ons-list-header>Other</ons-list-header>
+
+      <ons-list-item modifier="chevron">
+        <ons-icon icon="fa-cog" size="20px"></ons-icon>
+        Settings
+      </ons-list-item>
+
+      <ons-list-item modifier="chevron">
+        <ons-icon icon="fa-minus-circle" size="20px"></ons-icon>
+        Delete All Preferences
+      </ons-list-item>
+
+    </ons-list>
+
+  </div>
+</ons-page>

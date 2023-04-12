@@ -1,0 +1,41 @@
+<ons-navigator animation="slide" var="feed">  
+  <ons-page>
+    <ons-toolbar>
+      <div class="left">
+        <ons-toolbar-button ng-click="menu.toggle()"><ons-icon icon="ion-navicon-round" fixed-width="false"></ons-icon></ons-toolbar-button>
+      </div>
+      <div class="center">Home</div>
+    </ons-toolbar>
+    <div class="app-page">        
+      <ons-list class="photo-timeline">
+        <ons-list-item class="timeline-li" ng-repeat="i in [1,2,3,4,5,6,7,8,9]">
+          <ons-row>
+            <ons-col width="40px" >
+              <div class="timeline-avatar">
+                <img ng-src="images/profiles/profile-image-0{{i}}.png" >
+              </div>
+            </ons-col>
+            <ons-col>
+              <div class="timeline-id">@hansolo</div>
+            </ons-col>
+            <ons-col width="80px">
+              <div class="timeline-time"><ons-icon icon="ion-ios7-clock" size="14px"></ons-icon> 4m</div>
+            </ons-col>
+          </ons-row>
+          <ons-row>
+            <ons-col modifier="tappable">
+              <img ng-src="images/gallery/0{{i}}.png" class="timeline-image" ng-click="feed.pushPage('photo.html')">
+            </ons-col>
+          </ons-row>
+          <ons-row>
+            <ons-col>
+              <div class="timeline-message">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              </div>
+            </ons-col>
+          </ons-row>
+        </ons-list-item>
+      </ons-list>
+    </div>
+  </ons-page>
+</ons-navigator> 

@@ -1,0 +1,42 @@
+<ons-page>
+  <ons-toolbar>
+    <div class="left">
+      <ons-toolbar-button ng-click="menu.toggle()"><ons-icon icon="ion-navicon-round" fixed-width="false"></ons-icon></ons-toolbar-button>
+    </div>
+    <div class="center">Contact Us</div>
+  </ons-toolbar>
+
+  <div class="app-page">
+    <div class="app-hero app-hero-image">
+      <h2>Contact</h2>
+      <div class="app-hero-overlay"></div>
+      <img src="images/place.png" class="app-hero-bg">
+    </div>
+
+    <div class="app-page-contact">
+
+      <ons-list modifier="inset">
+        <ons-list-item>
+          <input type="text" class="text-input text-input--transparent" placeholder="Name" >
+        </ons-list-item>
+        <ons-list-item>
+          <input type="email" class="text-input text-input--transparent" placeholder="Email" >
+        </ons-list-item>
+        <ons-list-item>
+          <textarea class="textarea textarea--transparent" placeholder="Message"></textarea>
+        </ons-list-item>
+
+      </ons-list>
+
+      <div class="contact-button">
+        <ons-button modifier="large">
+          Send Message
+        </ons-button>
+      </div>
+
+
+    </div>
+
+  </div>
+
+</ons-page>

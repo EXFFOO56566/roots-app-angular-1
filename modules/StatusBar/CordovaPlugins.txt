@@ -1,0 +1,22 @@
+/*! 
+ * Roots v 2.0.0
+ * Follow me @adanarchila at Codecanyon.net
+ * URL: http://codecanyon.net/item/roots-phonegapcordova-multipurpose-hybrid-app/9525999
+ * Don't forget to rate Roots if you like it! :)
+ */
+
+This module will need these plugins:
+////////////////////////////////////
+
+
+org.apache.cordova.statusbar
+https://github.com/apache/cordova-plugin-statusbar
+
+
+For PhoneGap Build you can use:
+///////////////////////////////
+
+
+<gap:plugin name="org.apache.cordova.statusbar" />
+
+

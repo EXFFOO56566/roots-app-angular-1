@@ -1,0 +1,37 @@
+<ons-page ng-controller="branchesController" ng-init="start(false, 'map')">
+  <ons-toolbar>
+    <div class="left">
+      <ons-toolbar-button ng-click="menu.toggle()"><ons-icon icon="ion-navicon-round" fixed-width="false"></ons-icon></ons-toolbar-button>
+    </div>
+    <div class="center">Branches Near You</div>
+    <div class="right" ng-show="isFetching">
+      <ons-toolbar-button><ons-icon icon="ion-loading-c" fixed-width="false" ></ons-icon></ons-toolbar-button>
+    </div>
+  </ons-toolbar>
+  <div  class="map-fullscreen-container" >
+    <map zoom="8" center="{{ centerMap }}" class="fullscreen" zoom-control-options="{position:'RIGHT_TOP'}">
+      
+      <info-window id="marker-info">
+        <div>
+          <strong class="markerTitle">{{ infoWindow.title }}</strong>
+          <div class="markerContent">
+            <p>{{ infoWindow.content }}</p>
+            <ul>              
+              <li><span class="ion-ios7-location"></span><p>{{ infoWindow.address }}</p></li>
+              <li><span class="ion-android-clock"></span><p>{{ infoWindow.hours }}</p></li>
+              <li><span class="ion-ios7-telephone"></span><p>{{ infoWindow.phone }}</p></li>
+              <li><span class="ion-model-s"></span><p>{{ infoWindow.distance }} km away</p></li>
+            </ul>
+            <a href="#" class="button get-directions" data-marker="{{ infoWindow.id }}">Get Directions</a>
+          </div>
+        </div>
+      </info-window>
+
+      <marker ng-repeat="(id, marker) in markers" id="{{ id }}" 
+      position="{{marker.location}}" 
+      on-click="showMarker(event, $index)" >
+      </marker>
+
+    </map>
+  </div>
+</ons-page>

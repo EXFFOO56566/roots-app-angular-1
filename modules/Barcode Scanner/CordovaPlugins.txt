@@ -1,0 +1,22 @@
+/*! 
+ * Roots v 2.0.0
+ * Follow me @adanarchila at Codecanyon.net
+ * URL: http://codecanyon.net/item/roots-phonegapcordova-multipurpose-hybrid-app/9525999
+ * Don't forget to rate Roots if you like it! :)
+ */
+
+This module will need these plugins:
+////////////////////////////////////
+
+
+com.phonegap.plugins.barcodescanner
+https://github.com/wildabeast/BarcodeScanner/
+
+
+For PhoneGap Build you can use:
+///////////////////////////////
+
+
+<gap:plugin name="com.phonegap.plugins.barcodescanner"  />
+
+

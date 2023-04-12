@@ -1,0 +1,65 @@
+<ons-page>
+  <ons-toolbar>
+    <div class="left">
+      <ons-back-button>Back</ons-back-button>
+    </div>
+    <div class="center">Photo Page</div>
+  </ons-toolbar>
+
+  <div class="app-page">
+    <div class="app-page-photo">   
+      <ons-row class="app-photo">   
+        <ons-col>
+          <img class="app-photo-main" src="images/gallery/ramen.png">
+        </ons-col>
+      </ons-row>
+      <ons-list class="app-photo-buttons">
+        <ons-list-item modifier="action-buttons">
+            <ons-row class="action">
+              <ons-col class="action-col"> 
+                <div class="action-icon"><ons-icon icon="ion-ios-star-half"></ons-icon></div>
+                <div class="action-label">Rate</div>
+              </ons-col>
+
+              <ons-col class="action-col">
+                <div class="action-icon"><ons-icon icon="ion-bookmark"></ons-icon></div>
+                <div class="action-label">Favorite</div>
+              </ons-col>
+
+              <ons-col class="action-col">
+                <div class="action-icon"><ons-icon icon="ion-share"></ons-icon></div>
+                <div class="action-label">Share</div>
+              </ons-col>
+
+              <ons-col class="action-col" ng-click="gallery.pushPage('comment.html');">
+                <div class="action-icon"><ons-icon icon="ion-compose"></ons-icon></div>
+                <div class="action-label">Comment</div>
+              </ons-col>
+            </ons-row>
+        </ons-list-item>
+      </ons-list>
+
+      <ons-list class="app-comments" modifier="inset">
+        <ons-list-item class="app-comments-li" ng-repeat="i in [1,2,3,4,5,6,7,8,9]">
+          <ons-row>
+            <ons-col width="50px">
+              <img ng-src="images/profiles/profile-image-0{{i}}.png" class="app-comments-image">
+            </ons-col>
+            <ons-col>
+              <div class="app-comments-date">3m</div>
+              <div class="app-comments-from">
+                <span class="app-comments-name">Dave Graham</span>
+                <span class="app-comments-id">@daveg</span>
+              </div>
+              <div class="app-comments-message">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              </div>
+            </ons-col>
+          </ons-row>
+        </ons-list-item>
+      </ons-list>
+
+    </div>
+  </div>
+
+</ons-page>

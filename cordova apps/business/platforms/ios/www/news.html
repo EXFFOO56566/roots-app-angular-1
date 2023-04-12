@@ -1,0 +1,41 @@
+<ons-navigator animation="slide" var="news">  
+  <ons-page>
+    <ons-toolbar modifier="opacity">
+      <div class="left">
+        <ons-toolbar-button ng-click="menu.toggle()"><ons-icon icon="ion-navicon-round" fixed-width="false"></ons-icon></ons-toolbar-button>
+      </div>
+      <div class="center">Latest News</div>
+    </ons-toolbar>
+
+    <div class="app-page news-page" ng-controller="newsController" data-ng-init="getAllRecords()">
+
+      <ons-list modifier="news">
+
+        <ons-list-item modifier="chevron" class="list-item-container" ng-repeat="item in items" ng-click="showPost($index)">
+          <ons-row>
+            <ons-col width="95px">
+              <img ng-show="{{ item.thumbnail_images }}" ng-src="{{ item.thumbnail_images.thumbnail.url }}" class="thumbnail">
+            </ons-col>
+            <ons-col>
+              <div class="name">
+                {{ item.title | limitTo: 15 }}...
+              </div>
+              <div class="location" ng-show="{{ item.categories }}">
+                <i class="ion-pricetags"></i> <span ng-repeat="cat in item.categories">{{cat.title}} </span>
+              </div>
+              <div class="desc">
+                {{ item.excerpt | htmlToPlaintext | limitTo: 60 }}...                
+              </div>
+            </ons-col>
+            <ons-col width="40px"></ons-col>
+          </ons-row>
+        </ons-list-item>
+
+      </ons-list>
+
+      <ons-button id="moreButton" modifier="large" should-spin="{{isFetching}}" ng-click="nextPage()">more news</ons-button>
+
+    </div>
+
+  </ons-page>
+</ons-navigator>   

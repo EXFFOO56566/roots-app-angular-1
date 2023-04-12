@@ -1,0 +1,39 @@
+<ons-navigator animation="slide" var="news">  
+  <ons-page>
+    <ons-toolbar>
+      <div class="left">
+      </div>
+      <div class="center">Latest News</div>
+    </ons-toolbar>
+
+    <div class="app-page news-page" ng-controller="newsController" data-ng-init="getAllRecords()">
+
+      <ons-list modifier="news">
+
+        <ons-list-item modifier="chevron" class="list-item-container" ng-repeat="item in items track by $index" ng-click="showPost($index)">
+          <ons-row>
+            <ons-col width="95px">
+              <div class="thumbnail-box is-loading" images-loaded="imgLoadedEvents">
+                <img ng-show="{{ item.thumbnail_images }}" ng-src="{{ item.thumbnail_images.thumbnail.url }}" class="thumbnail" img-cache>
+              </div>
+            </ons-col>
+            <ons-col>
+              <div class="name">
+                {{ item.title }}
+              </div>
+              <div class="desc">
+                {{ item.excerpt | htmlToPlaintext | limitTo: 100 }}...                
+              </div>
+            </ons-col>
+            <ons-col width="40px"></ons-col>
+          </ons-row>
+        </ons-list-item>
+
+      </ons-list>
+
+      <ons-button id="moreButton" modifier="large" should-spin="{{isFetching}}" ng-click="nextPage()">MORE</ons-button>
+
+    </div>
+
+  </ons-page>
+</ons-navigator>   

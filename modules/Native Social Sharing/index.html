@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="utf-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <title>Native Sharing</title>  
+
+  <!-- All our CSS -->
+  <!-- onsen-css-components.css is the skin of your app, you can generate one custom skin with this generator: http://components.onsen.io/ -->
+  <link rel="stylesheet" href="lib/onsen/css/onsenui.css">    
+  <link rel="stylesheet" href="css/onsen-css-components.css"> 
+  <link rel="stylesheet" href="css/plugins.css"/>
+  <link rel="stylesheet" href="css/roots.css"/>
+  <link rel="stylesheet" href="css/app.css"/>
+  
+  <!-- These are our JS libraries that make all the magic in our App -->
+  <script src="lib/onsen/js/angular/angular.js"></script>    
+  <script src="lib/onsen/js/onsenui.js"></script>    
+  <script src="js/plugins.js"></script>  
+  <script src="cordova.js"></script>
+  <script src="js/app.js"></script>  
+</head>
+
+<body>    
+
+  <ons-navigator animation="slide" var="sharingpage">  
+    <ons-page >
+      <ons-toolbar>
+        <div class="left">
+        </div>
+        <div class="center">Native Sharing</div>
+        <div class="right">
+        </div>
+      </ons-toolbar>
+
+      <div class="app-page">
+        <div class="app-page-content">
+          <h4>Share Samples</h4>
+          <ons-button modifier="large" onclick="window.plugins.socialsharing.share('Message only')">Message Only</ons-button>
+          <br><br>
+          <ons-button modifier="large cta" onclick="window.plugins.socialsharing.share('Message and subject', 'The subject')">Message and Subject</ons-button>
+          <br><br>
+          <ons-button modifier="large" onclick="window.plugins.socialsharing.share(null, null, null, 'http://codecanyon.net/item/roots-phonegapcordova-multipurpose-hybrid-app/9525999')">Link Only</ons-button>
+          <br><br>
+          <ons-button modifier="large cta" onclick="window.plugins.socialsharing.share('Message and link', null, null, 'http://codecanyon.net/item/roots-phonegapcordova-multipurpose-hybrid-app/9525999')">Message and Link</ons-button>
+          <br><br>
+          <ons-button modifier="large" onclick="window.plugins.socialsharing.share(null, null, 'https://0.s3.envato.com/files/112367606/logo.png', null)">Image Only</ons-button>
+          <br><br>
+          <ons-button modifier="large cta" onclick="window.plugins.socialsharing.share(null, 'Android filename', 'data:image/png;base64,R0lGODlhDAAMALMBAP8AAP///wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACH5BAUKAAEALAAAAAAMAAwAQAQZMMhJK7iY4p3nlZ8XgmNlnibXdVqolmhcRQA7', null)">Base64 Image</ons-button>
+          <br><br>
+          <ons-button modifier="large" onclick="window.plugins.socialsharing.share('Message and image', null, 'https://0.s3.envato.com/files/112367606/logo.png', null)">Message and Image</ons-button>
+          <br><br>
+          <ons-button modifier="large cta" onclick="window.plugins.socialsharing.share('Message, image and link', null, 'https://0.s3.envato.com/files/112367606/logo.png', 'http://codecanyon.net/item/roots-phonegapcordova-multipurpose-hybrid-app/9525999')">Message, Image and Link</ons-button>
+          <br><br>
+          <ons-button modifier="large" onclick="window.plugins.socialsharing.share('Message, subject, image and link', 'The subject', 'https://0.s3.envato.com/files/112367606/logo.png', 'http://codecanyon.net/item/roots-phonegapcordova-multipurpose-hybrid-app/9525999')">Message, subject, image and link</ons-button>
+          <br><br>
+          <ons-button modifier="large" onclick="window.plugins.socialsharing.share('Here is your PDF file', 'Your PDF', 'www/pdf/sample.pdf')">Share PDF</ons-button>
+          <br><br><br>
+
+          <h4>Share directly on Twitter</h4>
+          <ons-button modifier="large cta" onclick="window.plugins.socialsharing.shareViaTwitter('Message via Twitter')">Message via Twitter</ons-button>
+          <br><br>
+          <ons-button modifier="large" onclick="window.plugins.socialsharing.shareViaTwitter('Message and link via Twitter', null /* img */, 'http://codecanyon.net/item/roots-phonegapcordova-multipurpose-hybrid-app/9525999')">Message and link via Twitter</ons-button>
+          <br><br><br>
+
+          <h4>Share directly on Facebook</h4>
+          <ons-button modifier="large cta" onclick="window.plugins.socialsharing.shareViaFacebook('Message via Facebook', null /* img */, null /* url */)">Message via Facebook</ons-button>
+          <br><br>
+          <ons-button modifier="large " onclick="window.plugins.socialsharing.shareViaFacebook('Message via Facebook', null /* img */, 'http://codecanyon.net/item/roots-phonegapcordova-multipurpose-hybrid-app/9525999')">Message and link via Facebook</ons-button>
+          <br><br>
+          <ons-button modifier="large cta" onclick="window.plugins.socialsharing.shareViaFacebook('Message via Facebook', null /* img */, null /* url */, function() {console.log('share ok')}, function(errormsg){alert(errormsg)})">Message via Facebook (with errcallback)</ons-button>
+
+          <br><br><br>
+
+          <h4>Share directly on Whatsapp</h4>
+          <ons-button modifier="large cta" onclick="window.plugins.socialsharing.shareViaWhatsApp('Message via WhatsApp', null /* img */, null /* url */, function() {console.log('share ok')}, function(errormsg){alert(errormsg)})">Message via WhatsApp (with errcallback)</ons-button>
+
+          <br><br><br>
+
+          <h4>Share directly on a SMS</h4>
+
+          <ons-button modifier="large" onclick="window.plugins.socialsharing.shareViaSMS('My cool message', null /* see the note below */)">Share via SMS</ons-button>
+          <br><br>
+          <!-- Want to prefill some phonenumbers as well? Pass this instead of null. Important notes: For stable usage of shareViaSMS on Android 4.4 and up you require to add at least one phonenumber! Also, on Android make sure you use v4.0.3 or higher of this plugin, otherwise sharing multiple numbers to non-Samsung devices will fail -->
+          <ons-button modifier="large cta" onclick="window.plugins.socialsharing.shareViaSMS('My cool message', '0612345678,0687654321')">Share via SMS with Numbers</ons-button>
+          <br><br>
+          <!-- Need a subject and even image sharing? It's only supported on iOS for now and falls back to just message sharing on Android -->
+          <ons-button modifier="large" onclick="window.plugins.socialsharing.shareViaSMS({'message':'My cool message', 'subject':'The subject', 'image':'https://0.s3.envato.com/files/112367606/logo.png'}, '0612345678,0687654321')">Share via SMS with Image</ons-button>
+          <br><br>
+        </div>
+      </div>
+    </ons-page>
+  </ons-navigator>   
+
+</body>
+
+</html>

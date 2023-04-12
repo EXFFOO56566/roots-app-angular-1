@@ -1,0 +1,41 @@
+/*! 
+ * Roots v 2.0.0
+ * Follow me @adanarchila at Codecanyon.net
+ * URL: http://codecanyon.net/item/roots-phonegapcordova-multipurpose-hybrid-app/9525999
+ * Don't forget to rate Roots if you like it! :)
+ */
+
+This module will need these plugins:
+////////////////////////////////////
+
+
+org.apache.cordova.network-information
+https://github.com/apache/cordova-plugin-network-information
+
+
+For PhoneGap Build you can use:
+///////////////////////////////
+
+
+<gap:plugin name="org.apache.cordova.network-information" />
+
+
+Last.fm API
+///////////
+
+To get the Album Art we are using last.fm API so you need to create an API Account here: http://www.last.fm/api/account/create
+You can use mine included in the app.js but just for testing purposes, don't use it for production or my key will get banned. 
+
+Also you need to read the Terms of Service of last.fm http://www.last.fm/api/tos in the Terms of Service of January 27 of 2015 it says that you will not make more than 5 requests per originating IP address per second so use the interval according to your needs and don't abuse of their API or your app will be banned. Right now for testing purposes the interval refreshes the app every 40 seconds, do your math and change it as you needed. 
+
+
+Access Origin
+/////////////
+
+In order to stream the radio it is important to allow access to that domain. This can be setup via a whitelisting <access> element in your config.xml file.
+
+If you only want to do tests you can allow access to all domains to avoid this kind of issues:
+
+<access origin="*" />
+In order to avoid possible security issues, always limit the allowed domains list whenever possible.
+

@@ -1,0 +1,67 @@
+<ons-page>
+  <ons-toolbar>
+    <div class="left">
+      <ons-toolbar-button ng-click="menu.toggle()"><ons-icon icon="ion-navicon-round" fixed-width="false"></ons-icon></ons-toolbar-button>
+    </div>
+    <div class="center">Profile</div>
+    <div class="right">
+      <ons-toolbar-button><ons-icon icon="ion-gear-a" style="vertical-align: -4px; font-size: 28px;"></ons-icon></ons-toolbar-button>
+    </div>
+  </ons-toolbar>
+
+  <div class="app-profile">
+
+    <div class="profile-card">
+
+      <img src="images/profiles/profile-image-01.png" class="profile-image">
+      <div class="profile-name">Dave Graham</div>
+      <div class="profile-id">@davegraham</div>
+      <div class="profile-desc">Freelance designer, software engineer and cyclist</div>
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <filter id="blur">
+          <feGaussianBlur stdDeviation="10" />
+        </filter>
+      </svg>
+      <div class="black-overlay"></div>
+      <div class="blur">
+        <img src="images/bg1.png" class="bg">
+      </div>
+    </div>
+
+    <ons-list>
+      <ons-list-item>
+        <ons-row>
+          <ons-col class="info-col">
+            <div class="info-num">87</div>
+            <div class="info-unit">Comments</div>
+          </ons-col>
+          <ons-col class="info-col">
+            <div class="info-num">40</div>
+            <div class="info-unit">Following</div>
+          </ons-col>
+          <ons-col class="info-col">
+            <div class="info-num">38</div>
+            <div class="info-unit">Followers</div>
+          </ons-col>
+        </ons-row>
+      </ons-list-item>
+    </ons-list>
+
+    <ons-list modifier="inset" style="margin-top: 10px">
+      <ons-list-item modifier="chevron">
+        Write a comment
+      </ons-list-item>
+
+      <ons-list-item modifier="chevron">
+        See details
+      </ons-list-item>
+
+      <ons-list-item modifier="chevron">
+        Save to the list
+      </ons-list-item>
+
+    </ons-list>
+
+    <br>
+  </div>
+</ons-page>

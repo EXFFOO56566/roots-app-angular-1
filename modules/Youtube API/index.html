@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="utf-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <title>Youtube API</title>  
+
+  <!-- All our CSS -->
+  <!-- onsen-css-components.css is the skin of your app, you can generate one custom skin with this generator: http://components.onsen.io/ -->
+  <link rel="stylesheet" href="lib/onsen/css/onsenui.css">    
+  <link rel="stylesheet" href="css/onsen-css-components.css"> 
+  <link rel="stylesheet" href="css/plugins.css"/>
+  <link rel="stylesheet" href="css/roots.css"/>
+  <link rel="stylesheet" href="css/app.css"/>
+  
+  <!-- These are our JS libraries that make all the magic in our App -->
+  <script src="//www.youtube.com/iframe_api"></script>
+  <script src="lib/onsen/js/angular/angular.js"></script>    
+  <script src="lib/onsen/js/onsenui.js"></script>    
+  <script src="js/plugins.js"></script>  
+  <script src="cordova.js"></script>
+  <script src="js/app.js"></script>  
+      
+</head>
+
+<body>    
+
+<ons-navigator animation="slide" var="home">  
+  <ons-page>
+
+    <ons-toolbar>
+      <div class="left">
+      </div>
+      <div class="center">Inline Video Player</div>
+      <div class="right">
+      </div>
+    </ons-toolbar>
+
+    <div class="app-page">
+      <div class="app-page-content" ng-controller="youtubeController">
+        <div id="youtubeplayer">
+          <iframe webkit-playsinline width="100%" height="240" frameborder="0" id="player" src="http://www.youtube.com/embed/nOEw9iiopwI?playsinline=1&enablejsapi=1"></iframe>
+        </div>
+        <br>
+        <ons-button modifier="cta large" ng-click="playVideo()">Play</ons-button>
+        <br><br>
+        <ons-button modifier="cta large" ng-click="pauseVideo()">Pause</ons-button>
+        <br><br>
+        <ons-button modifier="cta large" ng-click="stopVideo()">Stop</ons-button>
+        <br><br>
+        <ons-button modifier="cta large" ng-click="nextVideo()">Next Video</ons-button>
+        <br><br>
+        <ons-button modifier="cta large" ng-click="anotherVideo()">Another Video</ons-button>
+      </div>
+    </div>
+
+  </ons-page>
+</ons-navigator>   
+
+</body>
+
+</html>
